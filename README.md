@@ -1,15 +1,23 @@
-# DevOps Capstone Template
+# devops-capstone-project
 
+[![Build Status](https://github.com/GR-Gustavo/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)](https://github.com/GR-Gustavo/devops-capstone-project/actions)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.9](https://img.shields.io/badge/Python-3.9-green.svg)](https://shields.io/)
 
-This repository contains the starter code for the project in [**IBM-CD0285EN-SkillsNetwork DevOps Capstone Project**](https://www.coursera.org/learn/devops-capstone-project?specialization=devops-and-software-engineering) which is part of the [**IBM DevOps and Software Engineering Professional Certificate**](https://www.coursera.org/professional-certificates/devops-and-software-engineering)
+Customer **Accounts** microservice for an e-commerce website, built as the capstone project of the [**IBM DevOps and Software Engineering Professional Certificate**](https://www.coursera.org/professional-certificates/devops-and-software-engineering).
 
-## Usage
+The account manager needs to keep track of the customers of the website. This service owns that data and exposes it as a well-formed REST API that the other microservices can call, so that customer accounts can be created, read, updated, deleted and listed. It is written in Python with Flask and PostgreSQL, developed test first with `nosetests` at 95% coverage, linted and tested by a GitHub Actions CI pipeline, containerized with Docker and deployed to Kubernetes through a Tekton CD pipeline.
 
-You should use this template to start your DevOps Capstone project. It contains all of the code that you will need to get started.
+## REST API
 
-Do Not fork this code! It is meant to be used by pressing the  <span style=color:white;background:green>**Use this Template**</span> button in GitHub. This will copy the code to your own repository with no connection back to the original repository like a fork would. This is what you want.
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/accounts` | Create a new account |
+| GET | `/accounts` | List all accounts |
+| GET | `/accounts/<id>` | Read a single account |
+| PUT | `/accounts/<id>` | Update an existing account |
+| DELETE | `/accounts/<id>` | Delete an account |
+| GET | `/health` | Service health check |
 
 ## Development Environment
 
