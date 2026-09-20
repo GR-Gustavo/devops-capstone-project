@@ -8,8 +8,9 @@ COPY requirements.txt .
 RUN python -m pip install --upgrade pip wheel && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy source files last because they change the most
+# Copy all application files into the image
 COPY service/ ./service/
+COPY setup.cfg .flaskenv Procfile ./
 
 # Switch to a non-root user
 RUN useradd --uid 1000 flask && chown -R flask /app
